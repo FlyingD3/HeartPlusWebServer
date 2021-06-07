@@ -1,0 +1,46 @@
+.abt-source {
+  margin-bottom: 2em;
+  color: white;
+  word-wrap: break-word;
+}
+
+.abt-source:last-child {
+  margin-bottom: 0;
+}
+
+.abt-source h3 {
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+
+.abt-source h5 {
+  text-transform: uppercase;
+  margin: 1.75em 0 0.25em 0;
+}
+
+.abt-source ul li {
+  padding: 0.1em 0;
+  font-weight: 100;
+}
+
+/* === BREAKPOINTS === */
+
+/* Extra large devices (large desktops, 1200px and down) */
+
+@media (max-width: 1200px) {
+}
+
+/* Large devices (desktops, 992px and down) */
+
+@media (max-width: 992px) {
+}
+
+/* Medium devices (tablets, 768px and down) */
+
+@media (max-width: 768px) {
+}
+
+/* Small devices (landscape phones, 576px and down) */
+
+@media (max-width: 576px) {
+}

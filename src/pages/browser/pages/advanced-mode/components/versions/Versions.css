@@ -1,0 +1,29 @@
+.vr-list {
+  margin-top: 2rem;
+  overflow: auto;
+}
+
+.vr-list-nested {
+  border-left: 1px solid white;
+}
+
+.vr-list-item {
+  display: block;
+  padding: 1em;
+  cursor: pointer;
+  font-weight: 100;
+  color: white;
+}
+
+.vr-vln-item {
+  padding: 1em 0;
+  color: white;
+  margin-left: 1em;
+}
+
+.vr-list-header {
+  color: black;
+  background: white;
+  padding: 1em;
+  display: block;
+}

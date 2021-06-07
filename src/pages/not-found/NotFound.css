@@ -1,0 +1,23 @@
+.cnt-404 img {
+  width: 18rem;
+  height: auto;
+}
+
+.cnt-404 hr {
+  border: none;
+  width: 24rem;
+  height: 1px;
+  background-color: #8a8a8a;
+}
+
+.cnt-404 h1 {
+  text-align: center;
+  margin: 0.75em 0;
+  color: #BF0606;
+}
+
+.cnt-404 h2 {
+  text-align: center;
+  margin: 0.75em 0;
+  color: #707070;
+}

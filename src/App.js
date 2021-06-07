@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="HeartPlus"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Menu from "./pages/menu/Menu";
+import NotFound from "./pages/not-found/NotFound";
+import About from "./pages/about/About";
+import Browser from "./pages/browser/Browser";
+
+import './App.css';
+import "./lib/normalize.css";
+
+class App extends Component {
+    /* Don't add anything to this class, it's used as routes manager*/
+    render() {
+      return (
+        <Switch>
+          <Route path="/" exact>
+            <Menu />
+          </Route>
+          <Route path="/app">
+            <Redirect to="/" />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/browser">
+            <Browser />
+          </Route>
+          <Route>
+            <NotFound />
+          </Route>
+        </Switch>
+      );
+    };
 }
 
 export default App;
