@@ -1,19 +1,18 @@
 import React, { Component } from "react";
 
-import Sidebar from "./components/sidebar/Sidebar";
-import Background from "./components/background/Background";
+import Navbar from "./components/navbar/Navbar"
+import Display from "./components/display/Display"
 
 import "./Menu.css";
-import BinaryContainer from "./../../utils/containers/binary/BinaryContainer";
+
 
 class Menu extends Component {
   render() {
     return (
-      <BinaryContainer
-        ltCnt={<Sidebar />}
-        rtCnt={<Background />}
-        isHiddenButtons={true}
-      />
+      <>
+        <Navbar />
+        <Display/>
+      </>
     );
   }
 }

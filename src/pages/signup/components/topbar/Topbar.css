@@ -1,20 +1,11 @@
-.mn-background-container {
-  width: calc(100% - 7rem);
-  background: url("../../img/heartplus.svg") center no-repeat;
-  position: relative;
-}
-
-
-.mn-switch-button img {
-  width: 10rem;
-
-  height: auto;
-  position: absolute;
-
-  bottom: 0;
-  right: 0;
-
-  margin: 1rem;
+.top {
+  display: flex;
+  height: 5rem;
+  background-color: #004691;
+  width: 100%;
+  -webkit-box-shadow: 10px 10px 5px -3px rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 10px 10px 5px -3px rgba(0, 0, 0, 0.19);
+  box-shadow: 10px 10px 5px -3px rgba(0, 0, 0, 0.19);
 }
 
 /* === BREAKPOINTS === */
@@ -25,10 +16,18 @@
 
 /* Medium devices (tablets, 768px and down) */
 @media (max-width: 768px) {
-  .mn-background-container {
+  .top {
+    width: 2rem;
+    height: auto;
+  }
+
+  .top {
     width: 100vw;
-    height: calc(100vh - 5rem);
-    background-size: 80%;
+    height: 5rem;
+  }
+
+  .top {
+    margin: 0;
   }
 }
 
