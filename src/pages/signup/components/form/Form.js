@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import "./Form.css";
-import { PSW_VALIDATOR } from "../../../../utils/Const";
+import { PSW_VALIDATOR, EM } from "../../../../utils/Const";
 
 class Form extends Component {
   handleSubmit(event) {
@@ -14,17 +14,14 @@ class Form extends Component {
       alert("Passwords don't match");
     } else {
       // creates entity
-      fetch("https://db.com", {
+      fetch("/user", {
         method: "POST",
         headers: {
-          "x-rapidapi-host": "db.com",
-          "x-rapidapi-key": "apikey",
-          "content-type": "application/json",
-          accept: "application/json"
+        "Content-Type": "application/json",
+          "Accept": "application/json"
         },
         body: JSON.stringify({
           email: email.value,
-          username: username.value,
           password: password.value
         })
       })
@@ -71,25 +68,12 @@ class Form extends Component {
             </div>
             <div className="su-frm-group">
               <input
-                type="text"
-                className="frm-field"
-                placeholder="Username"
-                name="username"
-                id="username"
-                required
-              />
-              <label htmlFor="username" className="frm-label">
-                Username
-              </label>
-            </div>
-            <div className="su-frm-group">
-              <input
                 type="password"
                 className="frm-field"
                 placeholder="Password"
                 name="password"
                 id="password"
-                pattern={PSW_VALIDATOR}
+               // pattern={PSW_VALIDATOR}
                 required
               />
               <label htmlFor="password" className="frm-label">
