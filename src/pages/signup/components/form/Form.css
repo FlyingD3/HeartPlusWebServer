@@ -1,0 +1,270 @@
+.su-form-cnt {
+  width: 50%;
+  font-family: 'Lato';
+}
+.su-frm-header {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%;
+  font-weight: bold;
+  width: 80%;
+}
+.su-frm-profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 300;
+}
+
+.su-input-cnt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* [INPUTS] */
+.su-frm-group {
+  position: relative;
+  padding: 1rem 0 0;
+  width: 80%;
+  
+}
+.frm-field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #d2d2d2;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #9b9b9b;
+  padding: 7px 0;
+  background: transparent;
+  transition: 0.1s;
+}
+.frm-field::placeholder {
+  color: transparent;
+}
+.frm-field:placeholder-shown ~ .frm-label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+.frm-label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b;
+}
+.frm-field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #BF0606, #b24c4c);
+  border-image-slice: 1;
+}
+.frm-field:focus ~ .frm-label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #BF0606;
+  font-weight: 700;
+}
+
+.su-frm-group
+  input[type="password"]:invalid:focus:not(:placeholder-shown)
+  ~ .requirements {
+  max-height: 2rem;
+  padding: 1rem 3rem 0rem 3rem;
+}
+
+/* reset input */
+.frm-field:required,
+.frm-field:invalid {
+  box-shadow: none;
+}
+
+.requirements {
+  padding: 0px 3rem 0 5rem;
+  color: #999;
+  max-height: 0;
+  transition: 0.28s;
+  overflow: hidden;
+  color: red;
+  font-weight: lighter;
+  font-size: 12px;
+}
+
+.su-frm-submit {
+  display: flex;
+  justify-content: flex-end;
+  width: 80%;
+  margin-top: 2rem;
+}
+
+/* [BUTTON] */
+.btn-fancy {
+  background-color: transparent;
+  border: 2px solid #d2d2d2;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 0.5em 0.5em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+}
+
+.btn-fancy .top-key {
+  height: 3px;
+  width: 1.5625rem;
+  top: -2px;
+  left: 0.625rem;
+  position: absolute;
+  background: #ffeae8;
+  -webkit-transition: 0.5s ease-out, left 0.3s ease-out;
+  transition: width 0.5s ease-out, left 0.3s ease-out;
+}
+.btn-fancy .bottom-key-1 {
+  height: 3px;
+  width: 1.5625rem;
+  right: 1.875rem;
+  bottom: -2px;
+  position: absolute;
+  background: #ffeae8;
+  -webkit-transition: width 0.5s ease-out, right 0.3s ease-out;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+.btn-fancy .bottom-key-2 {
+  height: 3px;
+  width: 0.625rem;
+  right: 0.625rem;
+  bottom: -2px;
+  position: absolute;
+  background: #ffeae8;
+  -webkit-transition: width 0.5s ease-out, right 0.3s ease-out;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+.btn-fancy:hover {
+  color: #ffeae8;
+  background: #BF0606;
+  border-color: transparent;
+}
+.btn-fancy:hover::before {
+  width: 0.9375rem;
+  background: #ffeae8;
+}
+
+.btn-fancy:hover .top-key {
+  left: -2px;
+  width: 0px;
+}
+.btn-fancy:hover .bottom-key-1,
+.btn-fancy:hover .bottom-key-2 {
+  right: 0;
+  width: 0;
+}
+
+/* checkbox */
+/* The following vars come from my theme. You'll need to replace with your own color values. - "green" - "red" - "blue" */
+.toggle {
+  align-items: center;
+  border-radius: 100px;
+  display: flex;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.toggle:last-of-type {
+  margin: 0;
+}
+.toggle__input {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.toggle__input:not([disabled]):active + .toggle-track, .toggle__input:not([disabled]):focus + .toggle-track {
+  border: 1px solid transparent;
+  box-shadow: 0px 0px 0px 2px #BF0606;
+}
+.toggle__input:disabled + .toggle-track {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+.toggle-track {
+  background: #ffffff;
+  border: 1px solid #9b9b9b;
+  border-radius: 100px;
+  cursor: pointer;
+  display: flex;
+  height: 30px;
+  margin-right: 12px;
+  position: relative;
+  width: 60px;
+}
+.toggle-indicator {
+  align-items: center;
+  background: #BF0606;
+  border-radius: 24px;
+  bottom: 2px;
+  display: flex;
+  height: 24px;
+  justify-content: center;
+  left: 2px;
+  outline: solid 2px transparent;
+  position: absolute;
+  transition: 0.25s;
+  width: 24px;
+}
+.checkMark {
+  fill: #fff;
+  height: 20px;
+  width: 20px;
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+}
+.toggle__input:checked + .toggle-track .toggle-indicator {
+  background: #BF0606;
+  transform: translateX(30px);
+}
+.toggle__input:checked + .toggle-track .toggle-indicator .checkMark {
+  opacity: 1;
+  transition: opacity 0.25s ease-in-out;
+}
+@media screen and (-ms-high-contrast: active) {
+  .toggle-track {
+    border-radius: 0;
+ }
+}
+
+
+
+
+
+@media (max-width: 992px) {
+  .su-frm-header {
+    margin-top: 4rem;
+  }
+}
+@media (max-width: 576px) {
+  .su-frm-header {
+    margin-top: 3rem;
+  }
+}

@@ -1,0 +1,50 @@
+.abt-display {
+  flex: 0.6;
+  background-color: #bf0606;
+  display: flex;
+  flex-direction: column;
+}
+
+.abt-col-one {
+  flex: 1;
+  overflow: auto;
+  margin: 4em;
+  margin-bottom: 0;
+}
+
+.abt-col-one h3 {
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+
+.abt-col-one p {
+  color: white;
+}
+
+.abt-col-two {
+  min-height: 8rem;
+  border-top: 1px solid #d2d2d2;
+  overflow: auto;
+  margin: 2em 4em;
+  padding-top: 2em;
+
+}
+
+.author-cnt h3 {
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+
+.author-cnt p {
+  color: white;
+}
+
+.author-name {
+  font-weight: 400;
+}
+
+.author-email {
+  font-weight: 100;
+}

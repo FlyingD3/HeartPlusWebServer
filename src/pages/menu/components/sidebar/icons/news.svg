@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="39" viewBox="0 0 48 39">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="48" height="39" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="folded-newspaper" clip-path="url(#clip-path)">
+    <g id="Group_4" data-name="Group 4">
+      <path id="Path_90" data-name="Path 90" d="M42,9V3H0V36s0,6,6,6H43.5s4.5-.093,4.5-6V9ZM6,39a2.938,2.938,0,0,1-3-3V6H39V36a4.338,4.338,0,0,0,1.014,3Z" transform="translate(0 -3)" fill="#fff"/>
+      <rect id="Rectangle_8" data-name="Rectangle 8" width="30" height="3" transform="translate(6 9)" fill="#fff"/>
+      <rect id="Rectangle_9" data-name="Rectangle 9" width="10.5" height="3" transform="translate(22.5 27)" fill="#fff"/>
+      <rect id="Rectangle_10" data-name="Rectangle 10" width="13.5" height="3" transform="translate(22.5 21)" fill="#fff"/>
+      <rect id="Rectangle_11" data-name="Rectangle 11" width="13.5" height="3" transform="translate(22.5 15)" fill="#fff"/>
+      <rect id="Rectangle_12" data-name="Rectangle 12" width="13.5" height="15" transform="translate(6 15)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,70 @@
+.su-cnt {
+  display: flex;
+  flex-flow: row;
+  font-family: "Lato";
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  background-color: #ffeae8;
+}
+
+.su-frm-header img{
+  display: flex;
+  justify-content: center;
+  width: 10rem;
+  height: auto;
+}
+.su-left-side {
+  height: calc(100vh - 5rem);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === BREAKPOINTS === */
+
+/* Medium devices (tablets, 768px and down) */
+@media (max-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and down) */
+@media (max-width: 992px) {
+  .su-cnt {
+    flex-direction: column-reverse;
+  }
+  .su-left-side {
+    width: 100%;
+    height: 50vh;
+  }
+  .su-right-side {
+    align-items: flex-end;
+    width: 99%;
+    background-size: 19rem;
+    height: 10rem;
+    height: calc(50vh - 10rem);
+  }
+}
+/* Small devices (landscape phones, 576px and down) */
+@media (max-width: 576px) {
+  .su-right-side {
+    background-size: 19rem;
+    height: 10rem;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and down) */
+@media screen and (min-width: 1200px) {
+}
+
+@media screen and (min-width: 1900px) {
+}
+
+@media screen and (min-width: 2100px) {
+}
+
+@media screen and (min-width: 2300px) {
+}
+
+@media screen and (min-width: 2700px) {
+}

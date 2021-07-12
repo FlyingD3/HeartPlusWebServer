@@ -1,0 +1,96 @@
+.br-display {
+  flex: 0.7;
+}
+
+.br-display-header {
+  height: 4rem;
+  background-color: #9c1919;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.br-display-header h5 {
+  color: white;
+  text-transform: uppercase;
+}
+
+.br-display-subheaders {
+  display: flex;
+  height: 4rem;
+  color: white;
+}
+
+.br-display-header0 {
+  flex: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #a73232;
+}
+
+.br-display-header1 {
+  flex: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #b24c4c;
+}
+
+.br-display-content {
+  height: calc(100vh - 8rem);
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 2rem 0 2rem;
+  width: 100%;
+}
+.br-display-chart{
+  display: flex;
+  justify-content: center;
+}
+
+.br-display-info{
+  padding-top: 1rem;
+}
+
+.br-display-wrapper {
+  margin: 4em 8em;
+  width: 100%;
+  overflow: auto;
+}
+
+#back-btn {
+  width: 1.5rem;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 2em;
+  cursor: pointer;
+}
+
+#switch-btn {
+  width: 1.5rem;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 2em;
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .br-display-wrapper {
+    margin: 4em;
+  }
+}
+
+/* Medium devices (tablets, 768px and down) */
+@media (max-width: 768px) {
+  .br-display-wrapper {
+    margin: 2em;
+    margin-top: 4em;
+    margin-bottom: 6em;
+  }
+}

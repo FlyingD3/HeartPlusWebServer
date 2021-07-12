@@ -1,0 +1,60 @@
+.abt-sidebar {
+  flex: 0.4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.abt-sidebar img {
+  width: 24rem;
+  height: auto;
+  margin: 0 2rem;
+}
+
+.abt-sidebar .footer {
+  display: block;
+  position: absolute;
+  bottom: 3.5em;
+}
+
+.abt-sidebar .footer h5 {
+  text-align: center;
+  font-weight: 100;
+  padding: 0.25em 0;
+}
+
+/* === BREAKPOINTS === */
+
+/* Extra large devices (large desktops, 1200px and down) */
+
+@media (max-width: 1200px) {
+  .abt-sidebar img {
+    width: 16rem;
+  }
+}
+
+/* Large devices (desktops, 992px and down) */
+
+@media (max-width: 992px) {
+}
+
+/* Medium devices (tablets, 768px and down) */
+
+@media (max-width: 768px) {
+  .abt-sidebar img {
+    width: 18rem !important;
+  }
+  .abt-sidebar {
+    flex: unset;
+    height: 100vh;
+  }
+}
+
+/* Small devices (landscape phones, 576px and down) */
+
+@media (max-width: 576px) {
+  .abt-sidebar img {
+    width: 24rem;
+  }
+}
