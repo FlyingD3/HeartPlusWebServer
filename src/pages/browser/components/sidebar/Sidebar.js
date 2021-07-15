@@ -56,7 +56,7 @@ class Sidebar extends Component {
             <input
               id="vendor-search"
               type="text"
-              placeholder="CVE-2020-0001"
+              placeholder="Nome del paziente"
               onChange={this.handleInput}
             />
           </div>
@@ -89,7 +89,45 @@ class Sidebar extends Component {
           <h4>PATIENTS</h4>
         </div>
         <div className="br-sidebar-list">
-          {this.props.isLoaded ? this.show() : this.loading()}
+          {/*this.props.isLoaded ? this.show() : this.loading()*/}
+
+          {/*MOCKUP*/}
+          <div className="br-sidebar-input">
+            <div className="CardInner">
+              <label>Full name of the patient</label>
+              <div className="container">
+                <div className="Icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#657789"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    className="feather feather-search"
+                  >
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                  </svg>
+                </div>
+                <div className="InputContainer">
+                  <input placeholder="search" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="br-sidebar-items">
+            <ul>
+              <li>Mario Rossi</li>
+              <li>Valeria Marrone</li>
+              <li>Luigi Bianchi</li>
+              <li>Eleonora Neri</li>
+              <li>Giuseppe Verdi</li>
+            </ul>
+          </div>
         </div>
       </div>
     );

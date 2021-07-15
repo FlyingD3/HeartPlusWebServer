@@ -75,9 +75,117 @@ a.button6{
   }
 
 
+  .nav-burger-cnt{
+    display:none;
+  }
+  .hamburger, .close {
+    border: none;
+    cursor: pointer;
+    /* position absolute position the icons relative to the body because they have no position relative parents*/
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+  }
+  
+  .hamburger {
+    background: white;
+  }
+  
+  .close {
+    background: black;
+  }
+  
+  .hamburger img, .close img {
+    width: 100%;
+    height: 100%;
+  }
+  
+ 
+  .navbar {
+
+    position: absolute;
+    /* a higher z-index put navbar above hamburger */
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    /* basic menu styling*/
+    list-style: none;
+    background: red;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    /* animate slide up/down */
+    transform: translateY(-100%);
+    transition: transform 0.2s ease;
+  }
+  
+  /* :target is called when its anchor id #navbar is called by clicking on the hamburger which has href="#navbar" */
+  
+  .navbar:target {
+    /* show navbar */
+    transform: translateY(0);
+  }
+  
+  li a {
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+    color: white !important;
+    font-weight: bold;
+    font-size: 1.2rem;
+    /* remove default underline and add our own with padding and border bottom */
+    text-decoration: none;
+    border-bottom: 1px solid black;
+    padding-bottom: 0.5rem;
+  }
+  
+  li a:hover, li a:focus {
+    /* show border bottom */
+    border-bottom: 1px solid white;
+  }
+
+
+
+
+
   @media all and (max-width:30em){
     a.button6{
       display:block;
       margin:0.4em auto;
     }
   }
+
+  @media (max-width: 1200px) {
+
+  }
+
+  @media (max-width: 992px) {
+
+  }
+
+  @media (max-width: 768px) {
+    .nav-link{
+      display:none;
+    }
+
+    .nav-link-cnt{
+      margin-right: 2rem;
+    }
+    .nav-burger-cnt{
+      display: inline;
+    }
+  }
+
+  @media (max-width: 576px) {
+
+    .nav-btn-link{
+      display:none;
+    }
+
+  }
+  
