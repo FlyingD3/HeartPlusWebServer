@@ -10,6 +10,12 @@ import searchIcon from "./icon/search.svg";
 class Sidebar extends Component {
   state = {};
 
+  constructor(props) {
+    super(props);
+    //faccio il loading dei pazienti dal database
+   this.state = { patients:[{"name":"mario","lastname":"rossi"},{"name":"giuseppe","lastname":"verdi"},{"name":"andrea","lastname":"gialli"}]}
+    } 
+
   load = () => {
     const { crtPatient } = this.state;
     if (!Object.is(this.isPatient(crtPatient), null))
@@ -31,7 +37,9 @@ class Sidebar extends Component {
   };
 
   handleInput = (ev) => {
+    console.log("qyu")
     this.setState({ crtPatient: ev.target.value.toUpperCase() }, this.search);
+    console.log(ev.target.value)
   };
 
   show = () => {
@@ -86,7 +94,7 @@ class Sidebar extends Component {
     return (
       <div className="br-sidebar">
         <div className="br-sidebar-header">
-          <h4>PATIENTS</h4>
+          <h4>Pazienti</h4>
         </div>
         <div className="br-sidebar-list">
           {/*this.props.isLoaded ? this.show() : this.loading()*/}
@@ -94,7 +102,7 @@ class Sidebar extends Component {
           {/*MOCKUP*/}
           <div className="br-sidebar-input">
             <div className="CardInner">
-              <label>Full name of the patient</label>
+              <label>Nome del paziente</label>
               <div className="container">
                 <div className="Icon">
                   <svg
@@ -121,11 +129,10 @@ class Sidebar extends Component {
           </div>
           <div className="br-sidebar-items">
             <ul>
-              <li>Mario Rossi</li>
-              <li>Valeria Marrone</li>
-              <li>Luigi Bianchi</li>
-              <li>Eleonora Neri</li>
-              <li>Giuseppe Verdi</li>
+              {this.state.patients.map(element => 
+                 <li>{element.name +" "+ element.lastname}</li>
+              )}
+              
             </ul>
           </div>
         </div>

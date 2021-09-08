@@ -2,9 +2,9 @@ import React, { Component } from "react";
 
 import { Link } from "react-router-dom";
 
-import "./Navbar.css";
+import "./NavbarUser.css";
 import Logo from "./icons/logo.svg";
-class Navbar extends Component {
+class NavbarUser extends Component {
   render() {
     return (
       <>
@@ -25,9 +25,9 @@ class Navbar extends Component {
             </Link>
           </div>
           <div className="nav-btn-link">
-            <Link to="/login">
+            <Link to="/sign-up">
               <a href="something" className="button6">
-                Login
+                Registra Paziente
               </a>
             </Link>
           </div>
@@ -57,4 +57,4 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar;
+export default NavbarUser;

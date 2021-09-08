@@ -75,10 +75,15 @@ let token = CryptoJS.AES.encrypt(JSON.stringify({pwd:req.body.pwd, type:req.body
 
 });
 
+function createToken (user) {
+  return jwt.sign({
+    data: user
+  }, process.env.REACT_APP_SERVER_KEY, { expiresIn: '6h' });
+}
 
 //utenti
 app.get('/login/user',(req, res)  => {
-          connection.query("SELECT uid as 'id', password FROM lime_users WHERE email ='"+req.query.mail+"'", function (error, rows) {
+          connection.query("SELECT id_user, password FROM Users WHERE email ='"+req.query.mail+"' AND validated=1", function (error, rows) {
             if(error) res.send(error);
             else {
               res.send({token: createToken(req.query.mail),rows});
@@ -91,36 +96,30 @@ app.get('/login/user',(req, res)  => {
 //user
     //inserisco un nuovo utente
     app.post('/user', (req,res) => {
-      connection.query("INSERT INTO Users (email,password) VALUES('"+req.body.email+"','"+CryptoAES.encrypt(req.body.password,process.env.REACT_APP_SERVER_KEY).toString()+"')", function(error,rows){
+      connection.query("INSERT INTO Users (email,password) VALUES('"+req.body.email+"','"+CryptoAES.encrypt(req.body.password,process.env.REACT_APP_SERVER_KEY).toString()+")", function(error,rows){
         if(error) res.send(error);
         else res.send(rows);
       });
     });
 
-   //aggiorno un nuovo utente esistente
-   app.put('/user',authenticateJWT,(req,res) => {
-    connection.query("UPDATE lime_participants SET firstname = '"+CryptoAES.encrypt(req.body.firstname,process.env.REACT_APP_SERVER_KEY).toString()+"',lastname = '"+CryptoAES.encrypt(req.body.lastname,process.env.REACT_APP_SERVER_KEY).toString()+"',email = '"+CryptoAES.encrypt(req.body.email,process.env.REACT_APP_SERVER_KEY).toString()+"',owner_uid = "+req.body.ownerId+",modified= '"+format(new Date(),'yyyy-MM-dd hh:mm:ss')+"' WHERE participant_id='"+req.body.pid+"'", function(error,rows){
-      if(error) res.send(error);
-      else res.send(rows);
+    //user
+    //inserisco un nuovo utente
+    app.post('/patient', (req,res) => {
+      connection.query("INSERT INTO Patients (email,password,name,lastname,birthdate,created_by) VALUES('"+req.body.email+"','"+CryptoAES.encrypt("paziente",process.env.REACT_APP_SERVER_KEY).toString()+"','"+req.body.name+"','"+req.body.lastname+"','"+req.body.birthdate+"','"+req.body.createdby+"')", function(error,rows){
+        if(error) res.send(error);
+        else res.send(rows);
+      });
     });
-  });
 
-   //ritorno un utente
-   app.get('/user',authenticateJWT,(req,res) => {
-    connection.query("Select a.participant_id,a.firstname, a.lastname, a.email, b.value as 'parentCode', c.value as 'group', d.value as 'birthDate', e.protocol as 'protId' from lime_participants a left join lime_participant_attribute b ON a.participant_id = b.participant_id left join lime_participant_attribute c ON a.participant_id = c.participant_id left join lime_participant_attribute d ON a.participant_id = d.participant_id left join orange_protocols_for_user e ON a.participant_id = e.participant_id where b.attribute_id = '"+process.env.REACT_APP_CODE_PARENT+"' AND c.attribute_id = '"+process.env.REACT_APP_GROUP+"' and d.attribute_id = '"+process.env.REACT_APP_BIRTH_DATE+"' and e.active = 1 and a.participant_id IN (SELECT participant_id FROM lime_participant_attribute WHERE attribute_id ='"+process.env.REACT_APP_CODE_CHILD+"' AND value = '"+req.query.code+"')", function(error,rows){
-      if(error) res.send(error);
-      else { 
-        rows.forEach(element => {
-          if(element.firstname!='') element.firstname = CryptoAES.decrypt(element.firstname,process.env.REACT_APP_SERVER_KEY).toString(CryptoJS.enc.Utf8);
-          if(element.lastname!='') element.lastname = CryptoAES.decrypt(element.lastname,process.env.REACT_APP_SERVER_KEY).toString(CryptoJS.enc.Utf8);
-          if(element.birthDate!='') element.birthDate = CryptoAES.decrypt(element.birthDate,process.env.REACT_APP_SERVER_KEY).toString(CryptoJS.enc.Utf8);
-          if(element.email!='') element.email = CryptoAES.decrypt(element.email,process.env.REACT_APP_SERVER_KEY).toString(CryptoJS.enc.Utf8);
-        }); 
-        res.send(rows);
-      
-      }
+    app.post('/measurement', (req,res) => {
+      req.body.measurements.forEach(item => {
+        connection.query("INSERT INTO Measurements (id_patient,value,start_date,end_date,id_type) SELECT id_patient,'"+item.value+"','"+item.startDate+"','"+item.endDate+"','"+item.type+"' FROM Devices WHERE id_device = '"+item.device+"'", function(error,rows){
+          if(error) res.send(error);
+          else res.send(rows);
+        });
+      });
+     
     });
-  });
 
   function authenticateJWT (req, res, next) {
     const authHeader = req.headers.authorization;

@@ -106,6 +106,13 @@
   margin-top: 2rem;
 }
 
+.su-frm-right{
+  display: flex;
+  justify-content: flex-start;
+  width: 80%;
+  margin-top: 2rem;
+}
+
 /* [BUTTON] */
 .btn-fancy {
   background-color: transparent;
@@ -204,6 +211,9 @@
   border: 1px solid transparent;
   box-shadow: 0px 0px 0px 2px #BF0606;
 }
+.toggle__input:active {
+  background-color: green;
+}
 .toggle__input:disabled + .toggle-track {
   cursor: not-allowed;
   opacity: 0.7;
@@ -219,6 +229,11 @@
   position: relative;
   width: 60px;
 }
+
+.toggle-track:toggled {
+  background-color: green;
+}
+
 .toggle-indicator {
   align-items: center;
   background: #BF0606;
