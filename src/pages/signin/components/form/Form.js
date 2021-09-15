@@ -1,13 +1,8 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
-import { Link } from "react-router-dom";
-
-=======
 import bcrypt from "bcryptjs";
->>>>>>> baec0bcb54e4da363bd99f76aeeeed59fcf4bb8a
 import "./Form.css";
 import { Redirect } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 
 class Form extends Component {
 
@@ -102,11 +97,8 @@ class Form extends Component {
                 SIGN IN
               </button>
             </div>
-            <div className="su-frm-right">
-          <a href="#">Password dimenticata</a>
-          </div>
             <div>
-<p>{error}</p>
+          <p>{error}</p>
             </div>
           </div>
         </form>
