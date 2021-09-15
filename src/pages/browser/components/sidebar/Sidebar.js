@@ -10,6 +10,19 @@ import searchIcon from "./icon/search.svg";
 class Sidebar extends Component {
   state = {};
 
+  constructor(props) {
+    super(props);
+    this.state = {patients:[]}
+    //faccio il loading dei pazienti dal database
+ this.loadPatients()
+  } 
+
+  loadPatients = () => {
+    fetch("/patients/all")
+    .then((response) => response.json()).then(resPatients=>{this.setState({patients: resPatients})}
+    );
+  }
+
   load = () => {
     const { crtPatient } = this.state;
     if (!Object.is(this.isPatient(crtPatient), null))
@@ -30,71 +43,27 @@ class Sidebar extends Component {
     else this.load();
   };
 
+  searchPatients(e){
+    const {patients} = this.state;
+    patients.map
+  }
+
   handleInput = (ev) => {
-    this.setState({ crtPatient: ev.target.value.toUpperCase() }, this.search);
+    console.log("qui")
+    console.log(ev.target.value.toUpperCase())
+   this.setState({ crtPatient: ev.target.value.toUpperCase() }, this.search);
   };
-
-  show = () => {
-    const { items, load, error } = this.props;
-    const { crtFilteredItems } = this.state;
-    let data;
-    // Loading items
-    data = crtFilteredItems.map((id) => {
-      return (
-        // We are modifyng the key to avoid collision with visualizer keys
-        <li key={id + "src"} onClick={(e) => this.props.onPatientChange(e, id)}>
-          {id}
-        </li>
-      );
-    });
-
-    return (
-      <>
-        <div className="br-sidebar-input">
-          <div className="br-sidebar-search">
-            <img src={searchIcon} alt="Search icon" />
-            <input
-              id="vendor-search"
-              type="text"
-              placeholder="Nome del paziente"
-              onChange={this.handleInput}
-            />
-          </div>
-          <img
-            className="br-switch-style"
-            src={switchIcon}
-            alt="change search method"
-            onClick={this.onSwitchChange}
-          ></img>
-        </div>
-        <div className="br-sidebar-items">
-          <ul>{data}</ul>
-        </div>
-      </>
-    );
-  };
-
-  loading = () => {
-    return (
-      <div className="br-loader-wrapper">
-        <img id="loader-icon" src={loaderIcon} alt="Loading icon" />
-      </div>
-    );
-  };
-
+ 
   render() {
     return (
       <div className="br-sidebar">
         <div className="br-sidebar-header">
-          <h4>PATIENTS</h4>
+          <h4>Pazienti</h4>
         </div>
         <div className="br-sidebar-list">
-          {/*this.props.isLoaded ? this.show() : this.loading()*/}
-
-          {/*MOCKUP*/}
           <div className="br-sidebar-input">
             <div className="CardInner">
-              <label>Full name of the patient</label>
+              <label>Nome del paziente</label>
               <div className="container">
                 <div className="Icon">
                   <svg
@@ -114,18 +83,17 @@ class Sidebar extends Component {
                   </svg>
                 </div>
                 <div className="InputContainer">
-                  <input placeholder="search" />
+                  <input placeholder="search" onChange={this.searchPatients}/>
                 </div>
               </div>
             </div>
           </div>
           <div className="br-sidebar-items">
             <ul>
-              <li>Mario Rossi</li>
-              <li>Valeria Marrone</li>
-              <li>Luigi Bianchi</li>
-              <li>Eleonora Neri</li>
-              <li>Giuseppe Verdi</li>
+              {this.state.patients.map(element => 
+                 <li>{element.name +" "+ element.lastname}</li>
+              )}
+              
             </ul>
           </div>
         </div>

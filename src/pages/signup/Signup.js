@@ -1,16 +1,14 @@
 import React, { Component } from "react";
 
 import Form from "./components/form/Form";
-
-import NavBar from "../menu/components/navbar/Navbar";
-
 import "./Signup.css";
+import NavbarUser from "../menu/components/navbarUser/NavbarUser";
 
 class Signup extends Component {
   render() {
     return (
       <>
-        <NavBar/>
+        <NavbarUser/>
         <div className="su-cnt">
         <div className="su-left-side">
             <Form />

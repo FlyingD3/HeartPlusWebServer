@@ -9,6 +9,10 @@ import { Link } from "react-router-dom";
 class Display extends Component {
   state = {};
 
+  constructor(props){
+    super(props)
+    //verifico che il login è stato effettuato altrimenti rimando alla login
+  }
   render() {
     return (
       <div className="br-display">
