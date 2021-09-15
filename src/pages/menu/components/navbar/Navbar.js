@@ -15,11 +15,6 @@ class Navbar extends Component {
         </div>
         <div className="nav-link-cnt">
           <div className="nav-link">
-            <Link to="/browser">
-              <a>Area Pazienti</a>
-            </Link>
-          </div>
-          <div className="nav-link">
             <Link to="/about">
               <a>Il Progetto</a>
             </Link>

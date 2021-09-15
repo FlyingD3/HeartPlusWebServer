@@ -111,6 +111,14 @@ app.get('/login/user',(req, res)  => {
       });
     });
 
+    //ritorna tutti i pazienti
+    app.get('/patients/all', (req,res) => {
+      connection.query("SELECT * FROM Patients", function(error,rows){
+        if(error) res.send(error);
+        else res.send(rows);
+      });
+    });
+
     app.post('/measurement', (req,res) => {
       req.body.measurements.forEach(item => {
         connection.query("INSERT INTO Measurements (id_patient,value,start_date,end_date,id_type) SELECT id_patient,'"+item.value+"','"+item.startDate+"','"+item.endDate+"','"+item.type+"' FROM Devices WHERE id_device = '"+item.device+"'", function(error,rows){

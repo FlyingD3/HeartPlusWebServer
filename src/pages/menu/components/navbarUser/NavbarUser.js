@@ -1,11 +1,25 @@
 import React, { Component } from "react";
-
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 import "./NavbarUser.css";
 import Logo from "./icons/logo.svg";
 class NavbarUser extends Component {
+
+  constructor(props){
+    super(props)
+    if(sessionStorage.getItem("loggedIN") == null){
+      console.log("qui")
+      this.state = {redirect:true}
+      console.log(this.state.redirect)
+    }
+    else    this.state = {redirect:false}
+  }
+
   render() {
+    const { redirect } = this.state
+    if (redirect) {
+      return <Redirect to='/login'/>;
+    }
     return (
       <>
       <header className="header-cnt">
