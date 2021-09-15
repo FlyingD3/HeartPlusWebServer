@@ -8,7 +8,7 @@ class Form extends Component {
     return (
       <div className="su-form-cnt">
         <div className="su-frm-header">
-          <h1>LOGIN </h1>
+          <h1>RECUPERA PASSWORD </h1>
         </div>
         <form onSubmit={this.handleSubmit}>
           <div className="su-input-cnt">
@@ -24,24 +24,6 @@ class Form extends Component {
               <label htmlFor="email" className="frm-label">
                 Email
               </label>
-            </div>
-            <div className="su-frm-group">
-              <input
-                type="password"
-                className="frm-field"
-                placeholder="Password"
-                name="password"
-                id="password"
-                required
-              />
-              <label htmlFor="password" className="frm-label">
-                Password
-              </label>
-            </div>
-            <div className="su-frm-group">
-              <Link to="/recover-psw">
-                <a className= "psw-frg">Password dimenticata?</a>
-              </Link>
             </div>
             <div className="su-frm-submit">
               <button className="btn-fancy">
