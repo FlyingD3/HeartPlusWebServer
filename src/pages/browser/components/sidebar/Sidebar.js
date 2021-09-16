@@ -45,7 +45,7 @@ class Sidebar extends Component {
 
   searchPatients(e){
     const {patients} = this.state;
-    patients.map
+    // patients.map
   }
 
   handleInput = (ev) => {

@@ -7,6 +7,8 @@ import About from "./pages/about/About";
 import Browser from "./pages/browser/Browser";
 import SignUp from "./pages/signup/Signup"
 import SignIn from "./pages/signin/SignIn"
+import RecoverPsw from "./pages/recover-psw/RecoverPsw"
+import Recovered from "./pages/recover-psw/Recovered"
 
 import './App.css';
 import "./lib/normalize.css";
@@ -34,6 +36,12 @@ class App extends Component {
           </Route>
           <Route path="/login">
             <SignIn />
+          </Route>
+          <Route path="/recover-psw">
+            <RecoverPsw />
+          </Route>
+          <Route path="/recovered">
+            <Recovered />
           </Route>
           <Route>
             <NotFound />

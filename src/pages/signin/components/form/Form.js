@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import bcrypt from "bcryptjs";
 import "./Form.css";
 import { Redirect } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 
 class Form extends Component {
 
@@ -84,6 +84,11 @@ class Form extends Component {
                 Password
               </label>
             </div>
+            <div className="su-frm-group">
+              <Link to="/recover-psw">
+                <a className= "psw-frg">Password dimenticata?</a>
+              </Link>
+            </div>
             <div className="su-frm-submit">
               <button className="btn-fancy">
                 <span className="top-key"></span>
@@ -92,11 +97,8 @@ class Form extends Component {
                 SIGN IN
               </button>
             </div>
-            <div className="su-frm-right">
-          <a href="#">Password dimenticata</a>
-          </div>
             <div>
-<p>{error}</p>
+          <p>{error}</p>
             </div>
           </div>
         </form>

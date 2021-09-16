@@ -1,0 +1,40 @@
+.top {
+  display: flex;
+  height: 5rem;
+  background-color: #BF0606;
+  width: 100%;
+  -webkit-box-shadow: 10px 10px 5px -3px rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 10px 10px 5px -3px rgba(0, 0, 0, 0.19);
+  box-shadow: 10px 10px 5px -3px rgba(0, 0, 0, 0.19);
+}
+
+/* === BREAKPOINTS === */
+
+/* Small devices (landscape phones, 576px and down) */
+@media (max-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and down) */
+@media (max-width: 768px) {
+  .top {
+    width: 2rem;
+    height: auto;
+  }
+
+  .top {
+    width: 100vw;
+    height: 5rem;
+  }
+
+  .top {
+    margin: 0;
+  }
+}
+
+/* Large devices (desktops, 992px and down) */
+@media (max-width: 992px) {
+}
+
+/* Extra large devices (large desktops, 1200px and down) */
+@media (max-width: 1200px) {
+}

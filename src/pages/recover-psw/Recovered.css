@@ -1,0 +1,25 @@
+.cnt-recovered img {
+    width: 15rem;
+    height: auto;
+  }
+  
+  .cnt-recovered  hr {
+    border: none;
+    width: 35.5rem;
+    height: 1px;
+    background-color: #8a8a8a;
+  }
+  
+  .cnt-recovered  h1 {
+    text-align: center;
+    margin: 0.75em 0;
+    font-weight: 1000;
+    color: black;
+  }
+  
+  .cnt-recovered  h5 {
+    text-align: center;
+    margin: 1em 0;
+    color: #707070;
+  }
+  
